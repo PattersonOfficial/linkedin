@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Swtich,
 } from 'react-router-dom';
 import Login from './components/Login';
 
