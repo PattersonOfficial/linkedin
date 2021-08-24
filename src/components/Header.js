@@ -13,15 +13,25 @@ const Header = (props) => {
 
                 <Search>
                     <div>
-                        <input type="search" placeholder="Search" />
+                        <input type="text" placeholder="Search" />
                     </div>
+                    <SearchIcon>
+                        <img src="/images/search-icon.svg" alt="Search" />
+                    </SearchIcon>
                 </Search>
-                <SearchIcon>
-                    <img src="/images/search-icon.svg" alt="Search" />
-                </SearchIcon>
+
+                <Nav>
+                    <NavWrapList>
+                        <NavList>
+                            <a>
+                                <img src="/images/nav-home.svg" alt="Home" />
+                            </a>
+                        </NavList>
+                    </NavWrapList>
+                </Nav>
             </Content>
         </Container>
-    )
+    );
 }
 
 const Container = styled.div`
@@ -48,8 +58,59 @@ const Logo = styled.span`
     font-size: 0px;
 `;
 
-const Search = styled.div``;
+const Search = styled.div`
+    opacity: 1;
+    flex-grow: 1;
+    position: relative;
+    & > div {
+        max-width: 280px;
+        input {
+            border: none;
+            box-shadow: none;
+            background-color: #eef3f8;
+            border-radius: 2px;
+            color: rgba(0, 0, 0, 0.9);
+            width: 218px;
+            padding: 0 8px 0 40px;
+            line-height: 1.75;
+            font-weight: 400;
+            font-size: 14px
+            height 34px;
+            border-color: #dce6f1;
+            vertical-align: text-top;
+        }
+    }
+`;
 
-const SearchIcon = styled.div``;
+const SearchIcon = styled.div`
+    width: 40px;
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    left: 2px;
+    border-radius: 0 2px 2px 0;
+    margin: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+
+const Nav = styled.nav`
+    margin-left: auto;
+    display: block;
+    @media (max-width: 768px) {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background: white;
+        width: 100%;
+    }
+`;
+
+const NavWrapList = styled.div``;
+
+const NavList = styled.div``;
 
 export default Header
